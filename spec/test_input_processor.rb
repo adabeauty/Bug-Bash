@@ -10,6 +10,7 @@ describe InputProcessor do
   end
 
   describe 'when invoke getInputs method,' do
+
     it 'should return 106 operations' do
       @operations.size.must_equal 106
     end

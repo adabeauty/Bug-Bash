@@ -9,6 +9,6 @@ class Operation
   end
 
   def isBelongToBaseLine
-    !@order.nil?
+    !@order.empty?
   end
 end
