@@ -24,6 +24,18 @@ module OptionalOperation
     assignment
   end
 
+  public
+  def self.print(accountOfPeople)
+
+    operations = InputProcessor.getOperations
+    optionalOperations = get(operations)
+
+    assignments = assignOperations(optionalOperations, accountOfPeople)
+    for i in 0..(accountOfPeople-1)
+      printAssignmentsOfOnePerson(assignments[i], i)
+    end
+  end
+
   private
   def self.assignToOnePeople(indexOfPerson, optionalOperations, accountOfPeople)
 
