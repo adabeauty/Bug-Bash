@@ -1,4 +1,4 @@
-class OptionalOperation
+module OptionalOperation
 
   public
   def self.get(operations)

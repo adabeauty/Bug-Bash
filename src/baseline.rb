@@ -1,4 +1,4 @@
-class Baseline
+module Baseline
 
   public
   def Baseline.get(operations)
