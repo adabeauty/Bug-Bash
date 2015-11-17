@@ -9,8 +9,8 @@ describe Baseline do
   describe 'when invoke get method of Baseline' do
 
     before do
-      @operations = InputProcessor.getOperations
-      @baseline = Baseline.get(@operations)
+      operations = InputProcessor.getOperations
+      @baseline = Baseline.get(operations)
     end
 
     it 'should return a array with 49 elements' do
