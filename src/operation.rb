@@ -7,4 +7,8 @@ class Operation
     @name = name
     @order = order
   end
+
+  def isBelongToBaseLine
+    !@order.nil?
+  end
 end
