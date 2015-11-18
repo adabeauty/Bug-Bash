@@ -1,15 +1,12 @@
-require 'minitest/autorun'
-
-require '../src/input_processor'
-require '../src/operation'
+require './spec_helper'
 
 describe InputProcessor do
 
-  before do
-    @operations = InputProcessor.get_operations
-  end
-
   describe 'when invoke getInputs method,' do
+
+    before do
+      @operations = InputProcessor.get_operations
+    end
 
     it 'should return 106 operations' do
       @operations.size.must_equal 106

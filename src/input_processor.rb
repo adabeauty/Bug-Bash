@@ -1,8 +1,8 @@
 class InputProcessor
 
-  ADMIN_OPERATIONS_FILE = '../data/admin_options.txt'
-  STUDENT_OPERATIONS_FILE = '../data/student_options.txt'
-  FACULTY_OPERATIONS_FILE = '../data/faculty_options.txt'
+  ADMIN_OPERATIONS_FILE = './data/admin_options.txt'
+  STUDENT_OPERATIONS_FILE = './data/student_options.txt'
+  FACULTY_OPERATIONS_FILE = './data/faculty_options.txt'
 
   def self.get_operations
     files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]

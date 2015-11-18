@@ -1,8 +1,4 @@
-require 'minitest/autorun'
-
-require '../src/optional_operation'
-require '../src/operation'
-require '../src/input_processor'
+require './spec_helper'
 
 describe OptionalOperation do
 

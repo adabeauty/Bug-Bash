@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require '../src/operation'
+require './spec_helper'
 
 describe Operation do
 
