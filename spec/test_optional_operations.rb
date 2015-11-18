@@ -30,7 +30,7 @@ describe OptionalOperation do
       operations = InputProcessor.get_operations
 
       optionalOperations = OptionalOperation.get(operations)
-      @arrayWithThreePeople = OptionalOperation.assignOperations(optionalOperations, 3)
+      @arrayWithThreePeople = OptionalOperation.assign_operations(optionalOperations, 3)
     end
 
     it 'should return array of operations with 3 elements' do

@@ -8,11 +8,11 @@ module OptionalOperation
     optionalOperations
   end
 
-  def self.assignOperations(optionalOperations, accountOfPeople)
+  def self.assign_operations(optionalOperations, accountOfPeople)
     assignment = []
 
     for i in 0..(accountOfPeople-1)
-      assignment << assignToOnePeople(i, optionalOperations, accountOfPeople)
+      assignment << assign_to_one_people(i, optionalOperations, accountOfPeople)
     end
 
     assignment
@@ -22,21 +22,21 @@ module OptionalOperation
 
     optionalOperations = get(InputProcessor.get_operations)
 
-    assignments = assignOperations(optionalOperations, accountOfPeople)
+    assignments = assign_operations(optionalOperations, accountOfPeople)
     for i in 0..(accountOfPeople-1)
-      printAssignmentsOfOnePerson(assignments[i], i)
+      print_assignments_of_one_person(assignments[i], i)
     end
   end
 
   private
-  def self.printAssignmentsOfOnePerson(assignments, indexOfPerson)
+  def self.print_assignments_of_one_person(assignments, indexOfPerson)
     puts "Person_#{indexOfPerson+1} has #{assignments.size} test points:"
     assignments.each { |assignment| puts "#{assignment.role}: " + "#{assignment.name}" }
     puts ''
   end
 
   private
-  def self.assignToOnePeople(indexOfPerson, optionalOperations, accountOfPeople)
+  def self.assign_to_one_people(indexOfPerson, optionalOperations, accountOfPeople)
     operations = []
     round = 0
     number = indexOfPerson
