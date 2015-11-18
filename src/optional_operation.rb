@@ -37,6 +37,17 @@ module OptionalOperation
   end
 
   private
+  def self.printAssignmentsOfOnePerson(assignments, indexOfPerson)
+    puts "Person_#{indexOfPerson+1} has #{assignments.size} test points:"
+
+    assignments.each do |assignment|
+      puts "#{assignment.role}: " + "#{assignment.name}"
+    end
+
+    puts ''
+  end
+
+  private
   def self.assignToOnePeople(indexOfPerson, optionalOperations, accountOfPeople)
 
     operations = Array.new
