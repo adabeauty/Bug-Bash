@@ -8,7 +8,7 @@ class Operation
     @order = order
   end
 
-  def isBelongToBaseLine
+  def is_belong_to_baseLine
     !@order.empty?
   end
 end

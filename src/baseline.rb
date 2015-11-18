@@ -5,7 +5,7 @@ module Baseline
     baseline = Array.new
 
     operations.each { |operation|
-      if operation.isBelongToBaseLine
+      if operation.is_belong_to_baseLine
         baseline.push(operation)
       end
     }

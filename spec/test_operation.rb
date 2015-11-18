@@ -24,11 +24,11 @@ describe Operation do
     end
 
     it 'given with order, should return true' do
-      @operation_with_order.isBelongToBaseLine.must_equal true
+      @operation_with_order.is_belong_to_baseLine.must_equal true
     end
 
     it 'given without order, should return false' do
-      @operation_without_order.isBelongToBaseLine.must_equal false
+      @operation_without_order.is_belong_to_baseLine.must_equal false
     end
   end
 end

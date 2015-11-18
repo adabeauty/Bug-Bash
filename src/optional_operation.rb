@@ -3,7 +3,7 @@ module OptionalOperation
   def self.get(operations)
     optionalOperations = []
 
-    operations.each { |operation| optionalOperations << operation unless operation.isBelongToBaseLine }
+    operations.each { |operation| optionalOperations << operation unless operation.is_belong_to_baseLine }
 
     optionalOperations
   end
