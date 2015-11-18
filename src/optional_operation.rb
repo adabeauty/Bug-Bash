@@ -20,7 +20,7 @@ module OptionalOperation
 
   def self.print(accountOfPeople)
 
-    optionalOperations = get(InputProcessor.getOperations)
+    optionalOperations = get(InputProcessor.get_operations)
 
     assignments = assignOperations(optionalOperations, accountOfPeople)
     for i in 0..(accountOfPeople-1)

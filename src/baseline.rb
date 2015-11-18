@@ -15,7 +15,7 @@ module Baseline
 
   public
   def Baseline.print
-    operations = InputProcessor.getOperations
+    operations = InputProcessor.get_operations
     baseline = get(operations)
 
     puts "Our baseline is: #{baseline.size}"
