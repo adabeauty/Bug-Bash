@@ -1,34 +1,26 @@
 module OptionalOperation
 
-  public
   def self.get(operations)
-    optionalOperations = Array.new
+    optionalOperations = []
 
-    operations.each do |operation|
-      if !operation.isBelongToBaseLine
-        optionalOperations.push(operation)
-      end
-    end
+    operations.each { |operation| optionalOperations << operation unless operation.isBelongToBaseLine }
 
     optionalOperations
   end
 
-  public
   def self.assignOperations(optionalOperations, accountOfPeople)
-    assignment = Array.new
+    assignment = []
 
     for i in 0..(accountOfPeople-1)
-      assignment.push(assignToOnePeople(i, optionalOperations, accountOfPeople))
+      assignment << assignToOnePeople(i, optionalOperations, accountOfPeople)
     end
 
     assignment
   end
 
-  public
   def self.print(accountOfPeople)
 
-    operations = InputProcessor.getOperations
-    optionalOperations = get(operations)
+    optionalOperations = get(InputProcessor.getOperations)
 
     assignments = assignOperations(optionalOperations, accountOfPeople)
     for i in 0..(accountOfPeople-1)
@@ -39,28 +31,21 @@ module OptionalOperation
   private
   def self.printAssignmentsOfOnePerson(assignments, indexOfPerson)
     puts "Person_#{indexOfPerson+1} has #{assignments.size} test points:"
-
-    assignments.each do |assignment|
-      puts "#{assignment.role}: " + "#{assignment.name}"
-    end
-
+    assignments.each { |assignment| puts "#{assignment.role}: " + "#{assignment.name}" }
     puts ''
   end
 
   private
   def self.assignToOnePeople(indexOfPerson, optionalOperations, accountOfPeople)
-
-    operations = Array.new
-
+    operations = []
     round = 0
-    number = indexOfPerson + accountOfPeople*round
+    number = indexOfPerson
     while number < optionalOperations.size do
-      operations.push(optionalOperations[number])
-
       round += 1
+      operations << optionalOperations[number]
+      # number += accountOfPeople * round
       number = indexOfPerson + accountOfPeople * round
     end
-
     operations
   end
 end

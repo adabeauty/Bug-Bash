@@ -4,7 +4,7 @@ class InputProcessor
   STUDENT_OPERATIONS_FILE = '../data/student_options.txt'
   FACULTY_OPERATIONS_FILE = '../data/faculty_options.txt'
 
-  def self.getOperations  
+  def self.get_operations
     inputsArray = []
     inputsArray.concat(readFile(ADMIN_OPERATIONS_FILE))
     inputsArray.concat(readFile(FACULTY_OPERATIONS_FILE))

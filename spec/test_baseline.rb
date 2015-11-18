@@ -9,7 +9,7 @@ describe Baseline do
   describe 'when invoke get method of Baseline' do
 
     before do
-      operations = InputProcessor.getOperations
+      operations = InputProcessor.get_operations
       @baseline = Baseline.get(operations)
     end
 

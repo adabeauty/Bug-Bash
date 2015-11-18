@@ -6,7 +6,7 @@ require '../src/operation'
 describe InputProcessor do
 
   before do
-    @operations = InputProcessor.getOperations
+    @operations = InputProcessor.get_operations
   end
 
   describe 'when invoke getInputs method,' do

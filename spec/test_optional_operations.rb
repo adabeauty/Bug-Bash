@@ -9,7 +9,7 @@ describe OptionalOperation do
   describe 'when invoke get method of OptionalOperations' do
 
     before do
-      operations = InputProcessor.getOperations
+      operations = InputProcessor.get_operations
       @optionalOperations = OptionalOperation.get(operations)
     end
 
@@ -27,7 +27,7 @@ describe OptionalOperation do
   describe 'when invoke assignOperations method with 3 people' do
 
     before do
-      operations = InputProcessor.getOperations
+      operations = InputProcessor.get_operations
 
       optionalOperations = OptionalOperation.get(operations)
       @arrayWithThreePeople = OptionalOperation.assignOperations(optionalOperations, 3)
