@@ -4,12 +4,11 @@ class InputProcessor
   STUDENT_OPERATIONS_FILE = '../data/student_options.txt'
   FACULTY_OPERATIONS_FILE = '../data/faculty_options.txt'
 
-
   def self.get_operations
     files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
-    inputsArray = []
-    files.each {|file| inputsArray.concat(read_file(file)) }
-    inputsArray
+    inputs_array = []
+    files.each {|file| inputs_array.concat(read_file(file)) }
+    inputs_array
   end
 
   private

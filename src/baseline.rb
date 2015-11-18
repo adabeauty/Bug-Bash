@@ -2,7 +2,7 @@ class Baseline
 
   def Baseline.get(operations)
     baseline = []
-    operations.each { |operation| baseline.push(operation) if operation.is_belong_to_baseLine }
+    operations.each { |operation| baseline << operation if operation.is_belong_to_baseLine }
     baseline
   end
 
