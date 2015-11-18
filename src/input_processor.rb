@@ -6,22 +6,22 @@ class InputProcessor
 
   def self.get_operations
     inputsArray = []
-    inputsArray.concat(readFile(ADMIN_OPERATIONS_FILE))
-    inputsArray.concat(readFile(FACULTY_OPERATIONS_FILE))
-    inputsArray.concat(readFile(STUDENT_OPERATIONS_FILE))
+    inputsArray.concat(read_file(ADMIN_OPERATIONS_FILE))
+    inputsArray.concat(read_file(FACULTY_OPERATIONS_FILE))
+    inputsArray.concat(read_file(STUDENT_OPERATIONS_FILE))
     inputsArray
   end
 
   private
-  def self.readFile(fileName)
+  def self.read_file(fileName)
     lines = IO.readlines(fileName)
     options = Array.new
-    lines.each {|line| options << spliteLine(line)}
+    lines.each {|line| options << splite_line(line)}
     options
   end
 
   private
-  def self.spliteLine(line)
+  def self.splite_line(line)
     array = line.split(',')
     Operation.new(array[0], array[1], array[2])
   end
