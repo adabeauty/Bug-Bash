@@ -4,18 +4,18 @@ class InputProcessor
   STUDENT_OPERATIONS_FILE = '../data/student_options.txt'
   FACULTY_OPERATIONS_FILE = '../data/faculty_options.txt'
 
+
   def self.get_operations
+    files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
     inputsArray = []
-    inputsArray.concat(read_file(ADMIN_OPERATIONS_FILE))
-    inputsArray.concat(read_file(FACULTY_OPERATIONS_FILE))
-    inputsArray.concat(read_file(STUDENT_OPERATIONS_FILE))
+    files.each {|file| inputsArray.concat(read_file(file)) }
     inputsArray
   end
 
   private
   def self.read_file(fileName)
     lines = IO.readlines(fileName)
-    options = Array.new
+    options = []
     lines.each {|line| options << splite_line(line)}
     options
   end
