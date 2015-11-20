@@ -2,16 +2,13 @@ require './spec_helper'
 
 describe OptionalOperation do
 
+  ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
+  STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
+  FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
 
   describe 'when invoke get method of OptionalOperations' do
-
     before do
-      ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
-      STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
-      FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
-
       files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
-
       operations = InputProcessor.get_operations(files)
       @optionalOperations = OptionalOperation.get(operations)
     end
@@ -30,13 +27,8 @@ describe OptionalOperation do
   describe 'when invoke assignOperations method with 3 people' do
 
     before do
-      ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
-      STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
-      FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
       files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
-
       operations = InputProcessor.get_operations(files)
-
       optionalOperations = OptionalOperation.get(operations)
       @arrayWithThreePeople = OptionalOperation.assign_operations(optionalOperations, 3)
     end

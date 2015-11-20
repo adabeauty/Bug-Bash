@@ -1,8 +1,8 @@
-module OptionalOperation
+require File.expand_path('../src/file_defination', File.dirname(__FILE__))
 
-  ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
-  STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
-  FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
+class OptionalOperation
+
+  extend FileDefination
 
   def self.get(operations)
     optional_operations = []
@@ -17,8 +17,7 @@ module OptionalOperation
   end
 
   def self.print(account_of_people)
-    files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
-    optional_operations = get(InputProcessor.get_operations(files))
+    optional_operations = get(InputProcessor.get_operations(FileDefination.getFiles))
     assignments = assign_operations(optional_operations, account_of_people)
     (0..account_of_people-1).each {|i| print_assignments_of_one_person(assignments[i], i)}
   end
@@ -42,12 +41,6 @@ module OptionalOperation
         number = index_of_person + account_of_people * round
       end
     }
-
-    # while number < optional_operations.size do
-    #   round += 1
-    #   operations << optional_operations[number]
-    #   number = index_of_person + account_of_people * round
-    # end
     operations
   end
 end

@@ -1,9 +1,8 @@
+require File.expand_path('../src/file_defination', File.dirname(__FILE__))
+
 class Baseline
 
-  ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
-  STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
-  FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
-  files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
+  extend FileDefination
 
   def Baseline.get(operations)
     baseline = []
@@ -12,8 +11,7 @@ class Baseline
   end
 
   def Baseline.print
-    files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
-    baseline = get(InputProcessor.get_operations(files))
+    baseline = get(InputProcessor.get_operations(FileDefination.getFiles))
     puts "Our baseline is: #{baseline.size}"
     baseline.each { |operation|  puts "#{operation.name}" }
   end
