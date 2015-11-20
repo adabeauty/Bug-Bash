@@ -1,5 +1,9 @@
 module OptionalOperation
 
+  ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
+  STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
+  FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
+
   def self.get(operations)
     optional_operations = []
     operations.each { |operation| optional_operations << operation unless operation.is_belong_to_baseLine }
@@ -13,7 +17,8 @@ module OptionalOperation
   end
 
   def self.print(account_of_people)
-    optional_operations = get(InputProcessor.get_operations)
+    files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
+    optional_operations = get(InputProcessor.get_operations(files))
     assignments = assign_operations(optional_operations, account_of_people)
     (0..account_of_people-1).each {|i| print_assignments_of_one_person(assignments[i], i)}
   end
@@ -30,11 +35,19 @@ module OptionalOperation
     operations = []
     round = 0
     number = index_of_person
-    while number < optional_operations.size do
-      round += 1
-      operations << optional_operations[number]
-      number = index_of_person + account_of_people * round
-    end
+    optional_operations.each_with_index { |operation, index |
+      if(number < optional_operations.size)
+        round += 1
+        operations << operation
+        number = index_of_person + account_of_people * round
+      end
+    }
+
+    # while number < optional_operations.size do
+    #   round += 1
+    #   operations << optional_operations[number]
+    #   number = index_of_person + account_of_people * round
+    # end
     operations
   end
 end
