@@ -5,6 +5,7 @@ describe OptionalOperation do
   ADMIN_OPERATIONS_FILE = File.expand_path('../data/admin_options.txt', File.dirname(__FILE__))
   STUDENT_OPERATIONS_FILE = File.expand_path('../data/student_options.txt', File.dirname(__FILE__))
   FACULTY_OPERATIONS_FILE = File.expand_path('../data/faculty_options.txt', File.dirname(__FILE__))
+  SUPPORT_OPERATIONS_FILE = File.expand_path('../data/support_admin.txt', File.dirname(__FILE__))
 
   describe 'when invoke get method of OptionalOperations' do
     before do
@@ -13,8 +14,8 @@ describe OptionalOperation do
       @optionalOperations = OptionalOperation.get(operations)
     end
 
-    it 'should should return a array with 57 optional operations' do
-      @optionalOperations.size.must_equal 57
+    it 'should should return a array with 78 optional operations' do
+      @optionalOperations.size.must_equal 78
     end
 
     it 'should should return a array of optional operations' do
@@ -38,9 +39,9 @@ describe OptionalOperation do
     end
 
     it 'every element in operation array is array of operations' do
-      @arrayWithThreePeople[0].size.must_equal 19
-      @arrayWithThreePeople[1].size.must_equal 19
-      @arrayWithThreePeople[2].size.must_equal 19
+      @arrayWithThreePeople[0].size.must_equal 26
+      @arrayWithThreePeople[1].size.must_equal 26
+      @arrayWithThreePeople[2].size.must_equal 26
     end
   end
 end

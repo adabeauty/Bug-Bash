@@ -5,21 +5,21 @@ describe Operation do
   describe 'when create a new operation' do
 
     before do
-      @operation_with_order = Operation.new('Admin', 'Import member', '1')
+      @operation_with_order = Operation.new(['Admin', 'base', 'Import member'])
     end
 
     it 'should has role, name and order' do
-      @operation_with_order.role.must_equal 'Admin'
-      @operation_with_order.name.must_equal 'Import member'
-      @operation_with_order.order.must_equal '1'
+      @operation_with_order.operations.must_equal 'Admin'
+      @operation_with_order.type.must_equal 'base'
+      @operation_with_order.index.must_equal 'Import member'
     end
   end
 
   describe 'when invoke inBelongToBaseline' do
 
     before do
-      @operation_with_order = Operation.new('Admin', 'Import member', '1')
-      @operation_without_order = Operation.new('Admin', 'Import member', '')
+      @operation_with_order = Operation.new(['Admin', 'base', 'Import member'])
+      @operation_without_order = Operation.new(['Admin', 'optional', 'Import member'])
     end
 
     it 'given with order, should return true' do

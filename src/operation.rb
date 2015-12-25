@@ -1,14 +1,15 @@
 class Operation
 
-  attr_accessor :name, :order, :role
+  attr_accessor :operations, :type, :index, :key_feature
 
-  def initialize(role, name, order)
-    @role = role
-    @name = name
-    @order = order
+  def initialize(row)
+    @operations = row[0]
+    @type = row[1]
+    @index = row[2]
+    @key_feature = row[3]
   end
 
   def is_belong_to_baseLine
-    !@order.empty?
+    @type == 'base'
   end
 end

@@ -13,6 +13,6 @@ class Baseline
   def Baseline.print
     baseline = get(InputProcessor.get_operations(FileDefination.getFiles))
     puts "Our baseline is: #{baseline.size}"
-    baseline.each { |operation|  puts "#{operation.name}" }
+    baseline.each { |operation|  puts "#{operation.operations}: #{operation.index} #{operation.key_feature}" }
   end
 end
