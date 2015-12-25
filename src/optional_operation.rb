@@ -1,8 +1,8 @@
-require File.expand_path('../src/file_defination', File.dirname(__FILE__))
+require File.expand_path('../src/file_definition', File.dirname(__FILE__))
 
 class OptionalOperation
 
-  extend FileDefination
+  extend FileDefinition
 
   def self.get(operations)
     optional_operations = []
@@ -17,7 +17,7 @@ class OptionalOperation
   end
 
   def self.print(account_of_people)
-    optional_operations = get(InputProcessor.get_operations(FileDefination.getFiles))
+    optional_operations = get(InputProcessor.get_operations(FileDefinition.getFiles))
     assignments = assign_operations(optional_operations, account_of_people)
     (0..account_of_people-1).each {|i| print_assignments_of_one_person(assignments[i], i)}
   end

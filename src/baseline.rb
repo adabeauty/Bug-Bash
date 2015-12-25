@@ -1,8 +1,8 @@
-require File.expand_path('../src/file_defination', File.dirname(__FILE__))
+require File.expand_path('../src/file_definition', File.dirname(__FILE__))
 
 class Baseline
 
-  extend FileDefination
+  extend FileDefinition
 
   def Baseline.get(operations)
     baseline = []
@@ -11,7 +11,7 @@ class Baseline
   end
 
   def Baseline.print
-    baseline = get(InputProcessor.get_operations(FileDefination.getFiles))
+    baseline = get(InputProcessor.get_operations(FileDefinition.getFiles))
     puts "Our baseline is: #{baseline.size}"
     baseline.each { |operation|  puts "#{operation.operations}: #{operation.index} #{operation.key_feature}" }
   end

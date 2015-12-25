@@ -9,13 +9,13 @@ describe OptionalOperation do
 
   describe 'when invoke get method of OptionalOperations' do
     before do
-      files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
+      files = [SUPPORT_OPERATIONS_FILE, ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
       operations = InputProcessor.get_operations(files)
       @optionalOperations = OptionalOperation.get(operations)
     end
 
-    it 'should should return a array with 78 optional operations' do
-      @optionalOperations.size.must_equal 78
+    it 'should should return a array with 82 optional operations' do
+      @optionalOperations.size.must_equal 82
     end
 
     it 'should should return a array of optional operations' do
@@ -28,7 +28,7 @@ describe OptionalOperation do
   describe 'when invoke assignOperations method with 3 people' do
 
     before do
-      files = [ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
+      files = [SUPPORT_OPERATIONS_FILE, ADMIN_OPERATIONS_FILE, FACULTY_OPERATIONS_FILE, STUDENT_OPERATIONS_FILE]
       operations = InputProcessor.get_operations(files)
       optionalOperations = OptionalOperation.get(operations)
       @arrayWithThreePeople = OptionalOperation.assign_operations(optionalOperations, 3)
@@ -39,9 +39,9 @@ describe OptionalOperation do
     end
 
     it 'every element in operation array is array of operations' do
-      @arrayWithThreePeople[0].size.must_equal 26
-      @arrayWithThreePeople[1].size.must_equal 26
-      @arrayWithThreePeople[2].size.must_equal 26
+      @arrayWithThreePeople[0].size.must_equal 28
+      @arrayWithThreePeople[1].size.must_equal 27
+      @arrayWithThreePeople[2].size.must_equal 27 
     end
   end
 end
